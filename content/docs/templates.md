@@ -45,10 +45,25 @@ A basic layout template looks something like this:
 The `templates/` directory contains a library of unique HTML templates featuring different structural layouts and DaisyUI themes. The standard layouts include:
 
 *   `layout.html` - The default, general-purpose layout.
+*   `layout-octoburger-cunty.html` - A local-first, typography-led editorial theme with the signature 🍔 OCTOBURGER menu.
 *   `layout-centered.html` - A centered, minimalist design.
 *   `layout-cyberpunk.html` - A bold sidebar layout using the DaisyUI 'cyberpunk' theme.
 
 *Note: You can easily create your own layouts by adding new `.html` files to the `templates/` directory.*
+
+### Octoburger Cunty
+
+For a high-fashion, high-contrast layout with no CDN or framework dependencies, select
+the built-in Octoburger theme:
+
+```bash
+go run ./cmd/la-famille build -template templates/layout-octoburger-cunty.html
+```
+
+It loads its scoped styling from `assets/css/octoburger-cunty.css`. The native
+`<details>` menu keeps the literal **🍔 OCTOBURGER** label keyboard accessible while
+remaining usable on narrow screens. It preserves the same page fields, canonical URL
+tags, Markdown rendering, and Emoji Kitchen behavior as every other layout.
 
 ## Specifying a Custom Layout
 

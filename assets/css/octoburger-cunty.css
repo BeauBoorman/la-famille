@@ -1,0 +1,119 @@
+/* Octoburger Cunty: local-first, typography-led, high-camp editorial styling. */
+:root {
+  --octo-ink: #16131a;
+  --octo-paper: #f7f1e7;
+  --octo-acid: #d8ff3e;
+  --octo-pink: #ff4f9a;
+  --octo-orange: #ff783d;
+  --octo-line: #16131a;
+  --octo-serif: Georgia, "Times New Roman", serif;
+  --octo-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.octo-theme {
+  background: var(--octo-paper);
+  color: var(--octo-ink);
+  font-family: var(--octo-sans);
+  margin: 0;
+  min-height: 100vh;
+}
+
+.octo-skip {
+  background: var(--octo-acid);
+  color: var(--octo-ink);
+  left: 1rem;
+  padding: .6rem .9rem;
+  position: absolute;
+  top: -5rem;
+  z-index: 10;
+}
+.octo-skip:focus { top: 1rem; }
+
+.octo-header {
+  align-items: center;
+  border-bottom: 2px solid var(--octo-line);
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 78rem;
+  padding: 1.2rem 2rem;
+}
+.octo-brand {
+  align-items: center;
+  color: inherit;
+  display: inline-flex;
+  font-size: .78rem;
+  font-weight: 800;
+  gap: .7rem;
+  letter-spacing: .16em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.octo-brand-mark { color: var(--octo-pink); font-size: 1.5rem; }
+.octo-menu { position: relative; }
+.octo-menu summary {
+  background: var(--octo-ink);
+  border: 2px solid var(--octo-ink);
+  color: var(--octo-acid);
+  cursor: pointer;
+  font-size: .8rem;
+  font-weight: 900;
+  letter-spacing: .12em;
+  list-style: none;
+  padding: .75rem 1rem;
+  text-transform: uppercase;
+}
+.octo-menu summary::-webkit-details-marker { display: none; }
+.octo-menu summary:hover { background: var(--octo-pink); color: var(--octo-ink); }
+.octo-menu summary:focus-visible, .octo-menu a:focus-visible,
+.octo-brand:focus-visible, .octo-prose a:focus-visible {
+  outline: 3px solid var(--octo-orange);
+  outline-offset: 4px;
+}
+.octo-menu nav {
+  background: var(--octo-acid);
+  border: 2px solid var(--octo-ink);
+  display: grid;
+  min-width: 12rem;
+  padding: .4rem;
+  position: absolute;
+  right: 0;
+  top: calc(100% + .5rem);
+  z-index: 5;
+}
+.octo-menu a {
+  color: var(--octo-ink);
+  font-weight: 800;
+  letter-spacing: .1em;
+  padding: .65rem .75rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.octo-menu a:hover { background: var(--octo-pink); }
+
+.octo-shell { margin: 0 auto; max-width: 62rem; padding: 7rem 2rem 8rem; }
+.octo-kicker { font-size: .7rem; font-weight: 800; letter-spacing: .22em; }
+.octo-shell h1 {
+  font-family: var(--octo-serif);
+  font-size: clamp(3.2rem, 10vw, 8.5rem);
+  font-weight: 400;
+  letter-spacing: -.07em;
+  line-height: .86;
+  margin: 1.2rem 0 2rem;
+  max-width: 12ch;
+  overflow-wrap: anywhere;
+}
+.octo-byline { border-bottom: 2px solid var(--octo-line); border-top: 2px solid var(--octo-line); display: flex; gap: 2rem; padding: .8rem 0; font-size: .7rem; font-weight: 800; letter-spacing: .13em; }
+.octo-prose { font-family: var(--octo-serif); font-size: 1.2rem; line-height: 1.65; margin-top: 3rem; max-width: 42rem; }
+.octo-prose h2, .octo-prose h3 { font-family: var(--octo-sans); letter-spacing: -.02em; line-height: 1; }
+.octo-prose a { color: var(--octo-ink); text-decoration-color: var(--octo-pink); text-decoration-thickness: .15em; }
+.octo-prose blockquote { border-left: .5rem solid var(--octo-pink); margin-left: 0; padding-left: 1.2rem; }
+.octo-prose code { background: var(--octo-acid); padding: .1em .25em; }
+.octo-prose pre { background: var(--octo-ink); color: var(--octo-acid); overflow-x: auto; padding: 1rem; }
+.octo-footer { border-top: 2px solid var(--octo-line); display: flex; font-size: .65rem; font-weight: 800; justify-content: space-between; letter-spacing: .14em; margin: 0 auto; max-width: 78rem; padding: 1rem 2rem 2rem; }
+@media (max-width: 600px) {
+  .octo-header { padding: 1rem; }
+  .octo-shell { padding: 5rem 1rem 6rem; }
+  .octo-footer { align-items: flex-start; flex-direction: column; gap: .6rem; padding-left: 1rem; padding-right: 1rem; }
+  .octo-byline { flex-wrap: wrap; gap: .5rem 1rem; }
+}

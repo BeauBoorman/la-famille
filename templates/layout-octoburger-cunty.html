@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{if .Site.SiteName}}{{.Title}} — {{.Site.SiteName}}{{else}}{{.Title}}{{end}}</title>
+    <meta name="description" content="{{.Description}}">
+    <meta property="og:title" content="{{.Title}}">
+    <meta property="og:description" content="{{.Description}}">
+    <meta property="og:image" content="{{.Image}}">
+    <meta property="og:type" content="website">
+    {{if .CanonicalURL}}<link rel="canonical" href="{{.CanonicalURL}}">
+    <meta property="og:url" content="{{.CanonicalURL}}">{{end}}
+    <link rel="stylesheet" href="/assets/css/theme-foundations.css">
+    <link rel="stylesheet" href="/assets/css/octoburger-cunty.css">
+</head>
+<body class="octo-theme">
+    <a class="octo-skip" href="#main-content">Skip to content</a>
+    <header class="octo-header">
+        <a class="octo-brand" href="/" aria-label="{{.Site.SiteName}} home">
+            <span class="octo-brand-mark" aria-hidden="true">✦</span>
+            <span>{{.Site.SiteName}}</span>
+        </a>
+        <details class="octo-menu">
+            <summary aria-label="Open OCTOBURGER menu"><span aria-hidden="true">🍔</span> OCTOBURGER</summary>
+            <nav aria-label="Main navigation">
+                <a href="/">Home</a>
+                <a href="/docs/">Docs</a>
+                <a href="/about/">About</a>
+            </nav>
+        </details>
+    </header>
+
+    <main id="main-content" class="octo-shell">
+        <div class="octo-kicker">THE FAMILY ARCHIVE / {{if .Date}}{{.Date}}{{else}}NOW{{end}}</div>
+        <h1>{{.Title}}</h1>
+        {{if or .Author .Date}}
+        <div class="octo-byline">
+            {{if .Author}}<span>BY {{.Author}}</span>{{end}}
+            {{if .Date}}<span>{{.Date}}</span>{{end}}
+        </div>
+        {{end}}
+        <article class="octo-prose">{{.Content}}</article>
+    </main>
+
+    <footer class="octo-footer">
+        <span>LA FAMILLE / MADE WITH FEELING</span>
+        <span aria-hidden="true">✦</span>
+        <span>THE OCTOBURGER IS ALWAYS OPEN</span>
+    </footer>
+</body>
+</html>
